@@ -43,6 +43,7 @@ def getPage(driver):
 	
 	return text
 
+# cleans the text
 def cleanText(text):
 	newText = re.sub("^<(.*)>$", " ", text)
 
