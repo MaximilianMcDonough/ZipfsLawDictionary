@@ -8,3 +8,4 @@ If you dont want to run the proram yourself I included a .txt file that you can 
 
 ## Technology Requirments
 * Python 3.9.12 or more recent
+* selenium
