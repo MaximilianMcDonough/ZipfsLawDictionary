@@ -1,10 +1,10 @@
 # ZipfsLawDictionary
 
 ## Project Aim
-The aim of this project is to create a dictionary of words that is ranked in order according to Zipfs law. To accomplish this, we send get request to Wikipedia asking for random pages. once we have these wiki articles, we extract the text and rank each word according to their frequency.
+In this project, we intend to create a dictionary of words ranked according to Zipf's law. For this purpose, we send a request to Wikipedia for random pages. Once the text of these Wikipedia articles has been extracted, we rank these words by frequency.
 
 ## How to use?
-If you don’t want to run the program yourself, I included a .txt file that you can download and use, the attached file countians a mostly correct representation of Zipfs law for the English language. It's not a completely correct representation because it uses random Wikipedia pages and there were only 10,000 pages that were used to create the list attached. All that being said, it should be good enough for most applications.
+Please find attached a .txt file that contains a mostly correct representation of Zipfs law for the English language.  The list attached is not a completely accurate representation because it uses random Wikipedia pages, and there are only 10,000 Wikipedia pages that were used. However, it should be adequate for most purposes.
 
 ## Technology Requirements
 * Python 3.6.12
