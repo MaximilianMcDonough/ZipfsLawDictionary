@@ -74,4 +74,5 @@ def updateDictionary(dictionary, text, count):
 	return (dictionary, count)
 
 # calls tha main function
-main()
+if __name__ == '__main__':
+	main()
