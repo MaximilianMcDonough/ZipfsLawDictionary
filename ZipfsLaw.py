@@ -2,6 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import re
 import collections
+import csv
 
 #the main methode where the program starts
 def main():
@@ -17,9 +18,9 @@ def main():
 		dictionary, wordCount = updateDictionary(dictionary, text.split(), wordCount)
 
 	
-	print(dict(sorted(dictionary.items(), key=lambda kv:kv[1])))
-	print('number of words total words: ', wordCount)
-	print('number of unique words: ', len(dictionary))
+	dictionary = dict(sorted(dictionary.items(), key=lambda kv:kv[1]))
+	
+	writeCsv(dictionary, wordCount)
 
 	driver.close()
 
@@ -72,6 +73,18 @@ def updateDictionary(dictionary, text, count):
 
 	# returns a touple dictionary and the word counter
 	return (dictionary, count)
+
+def writeCsv(dictionary, wordCount):
+	with open('ZipfsLawDict.csv', 'w', newline='') as csvfile:
+		fieldnames = ['Words', 'Frequency']
+		writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+		writer.writeheader()
+		for word in dictionary:
+			print(word, dictionary[word])
+			writer.writerow({'Words': word, 'Frequency': dictionary[word]/wordCount})
+    	
+
 
 # calls tha main function
 if __name__ == '__main__':
